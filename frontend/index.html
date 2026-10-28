@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Painel de Engenharia | Grupo Gadens</title>
+<link rel="icon" href="/static/img/logo-marca.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/static/css/styles.css">
+<link rel="stylesheet" href="/static/css/painel.css">
+</head>
+<body>
+
+<div id="gate" class="gate" hidden></div>
+
+<div class="app" id="app" hidden>
+
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar__brand">
+      <img src="/static/img/logo.svg" alt="Grupo Gadens" class="sidebar__logo">
+      <div class="sidebar__orgao">Painel de Engenharia</div>
+    </div>
+
+    <button class="empresa-troca" id="btn-empresa" type="button" aria-label="Trocar empresa">
+      <span class="empresa-troca__ponto" id="empresa-ponto"></span>
+      <span class="empresa-troca__txt">
+        <span class="empresa-troca__nome" id="empresa-nome"></span>
+        <span class="empresa-troca__tipo" id="empresa-tipo"></span>
+      </span>
+      <span class="empresa-troca__acao">trocar</span>
+    </button>
+
+    <nav class="nav" id="nav"></nav>
+
+    <div class="sidebar__foot">
+      <div class="frescor" id="frescor"></div>
+      <a class="sidebar__link" href="/docs" target="_blank" rel="noopener">Documentação da API</a>
+    </div>
+  </aside>
+
+  <div class="main">
+    <header class="topbar">
+      <button class="topbar__menu" id="btn-menu" aria-label="Alternar menu">
+        <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/></svg>
+      </button>
+      <div class="topbar__title">
+        <h1 id="page-title">Painel</h1>
+        <p id="page-sub"></p>
+      </div>
+      <div class="topbar__obra" id="obra-seletor" hidden>
+        <label for="sel-obra">Obra</label>
+        <select id="sel-obra"></select>
+      </div>
+      <div class="topbar__actions" id="page-actions"></div>
+      <button class="btn btn--sm" id="btn-atualizar" type="button" title="Buscar dados novos no Prevision">
+        <svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><path d="M21 12a9 9 0 1 1-3-6.7M21 4v5h-5" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span id="btn-atualizar-txt">Atualizar</span>
+      </button>
+      <button class="alert-bell" id="btn-alertas" aria-label="Alertas">
+        <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M18 8a6 6 0 1 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9M13.7 21a2 2 0 0 1-3.4 0" stroke="currentColor" stroke-width="1.7" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span class="alert-bell__count" id="alert-count" hidden>0</span>
+      </button>
+    </header>
+
+    <div class="progresso-global" id="progresso-global" hidden>
+      <div class="progresso-global__barra" id="progresso-barra"></div>
+      <span id="progresso-txt"></span>
+    </div>
+
+    <main class="content" id="content" tabindex="-1"></main>
+  </div>
+
+  <div class="drawer-backdrop" id="drawer-backdrop" hidden></div>
+
+  <aside class="drawer" id="alert-drawer" hidden aria-label="Alertas">
+    <div class="drawer__head">
+      <div><h2>Alertas</h2><p id="alert-sub"></p></div>
+      <button class="icon-btn" id="btn-fechar-alertas" aria-label="Fechar">&times;</button>
+    </div>
+    <div class="drawer__body" id="alert-list"></div>
+  </aside>
+
+  <aside class="drawer drawer--wide" id="side-drawer" hidden aria-label="Detalhe"></aside>
+</div>
+
+<div class="modal-backdrop" id="modal-backdrop" hidden>
+  <div class="modal" role="dialog" aria-modal="true" id="modal"></div>
+</div>
+
+<div class="toasts" id="toasts" aria-live="polite"></div>
+
+<script type="module" src="/static/js/app.js"></script>
+</body>
+</html>

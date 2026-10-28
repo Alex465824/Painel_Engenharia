@@ -1,0 +1,183 @@
+/* ==========================================================================
+   Painel de Engenharia - componentes proprios (somam-se ao styles.css base)
+   ========================================================================== */
+
+/* A empresa escolhida troca o acento (Gadens = vermelho da marca, Make IT = laranja). */
+body[data-empresa="makeit"] {
+  --marca-vermelho: #ef7622;
+  --marca-vermelho-escuro: #b85410;
+}
+body[data-empresa="makeit"] .nav__item.is-active { background: rgba(239, 118, 34, .1); }
+
+/* ------------------------------------------------------ escolha de empresa -- */
+.gate { min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 32px 20px; background: var(--plane); }
+.gate__inner { width: 100%; max-width: 920px; display: grid; gap: 26px; }
+.gate__logo { width: 168px; height: auto; }
+.gate h1 { font-size: 27px; letter-spacing: -0.02em; text-wrap: balance; margin-top: 18px; }
+.gate__lead { margin: 8px 0 0; color: var(--text-secondary); font-size: 14.5px; max-width: 62ch; }
+.gate__grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px; }
+.gate__rodape { font-size: 12px; color: var(--text-muted); }
+
+.empresa-card {
+  background: var(--surface-1); border: 1px solid var(--border); border-top: 4px solid var(--cor);
+  border-radius: var(--raio); padding: 22px; text-align: left; cursor: pointer; display: grid; gap: 10px;
+  box-shadow: var(--sombra); font: inherit; color: inherit;
+}
+.empresa-card:hover { border-color: var(--cor); box-shadow: var(--sombra-alta); }
+.empresa-card:focus-visible { outline: 2px solid var(--cor); outline-offset: 2px; }
+.empresa-card__tipo { font-size: 11px; text-transform: uppercase; letter-spacing: .09em; color: var(--text-muted); font-weight: 600; }
+.empresa-card__logo { max-width: 170px; max-height: 56px; object-fit: contain; align-self: flex-start; }
+.empresa-card__nome { font-size: 22px; font-weight: 650; color: var(--cor); letter-spacing: -0.01em; }
+.empresa-card__desc { font-size: 13px; color: var(--text-secondary); line-height: 1.5; }
+.empresa-card__obras { font-size: 12px; color: var(--text-secondary); font-weight: 550; }
+.empresa-card__menus { font-size: 11.5px; color: var(--text-muted); border-top: 1px solid var(--grid); padding-top: 10px; line-height: 1.65; }
+
+.empresa-troca {
+  display: flex; align-items: center; gap: 10px; margin: 12px 12px 4px; padding: 9px 11px; width: calc(100% - 24px);
+  border: 1px solid var(--border-forte); border-radius: var(--raio-sm); background: var(--surface-1); cursor: pointer; text-align: left;
+}
+.empresa-troca:hover { background: #f2f1ee; }
+.empresa-troca__ponto { width: 10px; height: 10px; border-radius: 50%; background: var(--marca-vermelho); flex: none; }
+.empresa-troca__txt { display: grid; min-width: 0; flex: 1; }
+.empresa-troca__nome { font-size: 13px; font-weight: 650; }
+.empresa-troca__tipo { font-size: 11px; color: var(--text-muted); }
+.empresa-troca__acao { font-size: 11px; color: var(--text-muted); text-decoration: underline; }
+
+/* ---------------------------------------------------------------- navegacao -- */
+.nav__grupo { font-size: 10.5px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--text-muted); padding: 14px 11px 5px; }
+.nav__grupo:first-child { padding-top: 4px; }
+.nav__tag { margin-left: auto; font-size: 9.5px; font-weight: 700; letter-spacing: .03em; text-transform: uppercase; padding: 1px 6px; border-radius: 20px; white-space: nowrap; }
+.nav__tag--excel { background: rgba(27, 175, 122, .15); color: #0b6e4b; }
+.nav__tag--mega { background: rgba(235, 104, 52, .15); color: #a8431c; }
+.nav__tag--token { background: rgba(74, 58, 167, .13); color: #4a3aa7; }
+.nav__tag--parcial { background: rgba(250, 178, 25, .22); color: #7a5200; }
+.nav__tag--sem { background: rgba(208, 59, 59, .13); color: #9c2020; }
+.nav__tag--breve { background: rgba(137, 135, 129, .15); color: #5c5a55; }
+.nav__badge + .nav__tag { margin-left: 6px; }
+
+.frescor { font-size: 11.5px; color: var(--text-muted); margin-bottom: 8px; line-height: 1.45; }
+.frescor b { color: var(--text-secondary); font-weight: 600; }
+.frescor--velho b { color: #92441f; }
+
+.topbar__obra { display: flex; align-items: center; gap: 8px; }
+.topbar__obra label { font-size: 11px; text-transform: uppercase; letter-spacing: .06em; color: var(--text-muted); font-weight: 600; }
+.topbar__obra select { width: auto; min-width: 170px; font-weight: 600; }
+
+.progresso-global { position: sticky; top: 61px; z-index: 19; height: 24px; background: #fff6e0; border-bottom: 1px solid rgba(250, 178, 25, .4); font-size: 11.5px; color: #7a5200; display: flex; align-items: center; padding: 0 26px; overflow: hidden; }
+.progresso-global__barra { position: absolute; left: 0; top: 0; bottom: 0; background: rgba(250, 178, 25, .3); transition: width .4s; }
+.progresso-global span { position: relative; }
+
+/* ------------------------------------------------------- blocos estilo Prevision */
+.titulo-obra { margin-bottom: 16px; display: flex; flex-wrap: wrap; gap: 8px 18px; align-items: baseline; }
+.titulo-obra h2 { font-size: 20px; letter-spacing: -0.01em; }
+.titulo-obra__meta { font-size: 12.5px; color: var(--text-muted); display: flex; gap: 16px; flex-wrap: wrap; }
+.titulo-obra__meta b { color: var(--text-secondary); font-weight: 600; }
+
+.pares { display: grid; grid-template-columns: repeat(auto-fit, minmax(112px, 1fr)); gap: 16px 20px; }
+.par__k { font-size: 11.5px; color: var(--text-muted); }
+.par__v { font-size: 15px; font-weight: 600; margin-top: 2px; font-variant-numeric: tabular-nums; }
+.par__v--lg { font-size: 28px; font-weight: 650; letter-spacing: -0.02em; line-height: 1.1; }
+.par__n { font-size: 11.5px; color: var(--text-muted); margin-top: 3px; line-height: 1.4; }
+
+.medidor { margin-top: 8px; height: 8px; border-radius: 4px; background: var(--grid); overflow: hidden; }
+.medidor > span { display: block; height: 100%; border-radius: 4px; }
+
+.barras3 { display: grid; gap: 15px; }
+.barra3__cab { display: flex; justify-content: space-between; align-items: baseline; font-size: 13px; margin-bottom: 5px; }
+.barra3__cab b { font-variant-numeric: tabular-nums; }
+.barra3__trilho { height: 10px; border-radius: 5px; background: var(--grid); }
+.barra3__fill { height: 10px; border-radius: 5px; }
+
+.cel-obra { display: grid; gap: 1px; min-width: 0; }
+.cel-obra__nome { font-weight: 600; }
+.cel-obra__sub { font-size: 11.5px; color: var(--text-muted); }
+.cel-dupla { min-width: 150px; }
+.cel-dupla__trilho { position: relative; height: 7px; border-radius: 4px; background: var(--grid); }
+.cel-dupla__fill { position: absolute; left: 0; top: 0; bottom: 0; border-radius: 4px; }
+.cel-dupla__marca { position: absolute; top: -3px; width: 2px; height: 13px; background: var(--text-primary); opacity: .45; }
+.cel-dupla__txt { font-size: 11px; color: var(--text-muted); margin-top: 4px; font-variant-numeric: tabular-nums; }
+
+.txt-bom { color: #006300; }
+.txt-aten { color: #92441f; }
+.txt-crit { color: var(--status-critical); }
+.txt-mudo { color: var(--text-muted); }
+.forte { font-weight: 650; }
+.spark { display: block; }
+
+.tag--excel { background: rgba(27, 175, 122, .15); color: #0b6e4b; }
+.tag--mega { background: rgba(235, 104, 52, .15); color: #a8431c; }
+.tag--token { background: rgba(74, 58, 167, .13); color: #4a3aa7; }
+
+/* ------------------------------------------------------------- alertas na tela */
+.atencao-lista { display: grid; gap: 8px; }
+.atencao { display: flex; gap: 11px; align-items: flex-start; padding: 10px 12px; border: 1px solid var(--border); border-radius: var(--raio-sm); background: #fff; cursor: pointer; text-align: left; width: 100%; }
+.atencao:hover { border-color: var(--border-forte); }
+.atencao__barra { width: 3px; align-self: stretch; border-radius: 3px; background: var(--status-neutro); flex: none; }
+.atencao--critico .atencao__barra { background: var(--status-critical); }
+.atencao--atencao .atencao__barra { background: var(--status-warning); }
+.atencao--info .atencao__barra { background: var(--series-1); }
+.atencao__titulo { font-size: 13px; font-weight: 600; }
+.atencao__det { font-size: 12px; color: var(--text-muted); margin-top: 1px; }
+
+/* ------------------------------------------------------------------ Gantt/mapa */
+.gantt-wrap, .heat-wrap { overflow-x: auto; border: 1px solid var(--border); border-radius: var(--raio-sm); background: #fff; }
+.gantt-wrap svg, .heat-wrap svg { display: block; }
+.gantt__linha { cursor: pointer; }
+.gantt__linha:hover .gantt__fundo { fill: rgba(42, 120, 214, .07); }
+.heat__cel { stroke: #fff; stroke-width: 1.5; }
+
+.paginacao { display: flex; align-items: center; gap: 10px; justify-content: flex-end; margin-top: 12px; font-size: 12.5px; color: var(--text-muted); }
+
+/* ----------------------------------------------------------- arvore de orcamento */
+.arvore__linha { display: grid; grid-template-columns: minmax(240px, 1fr) 130px 100px 100px 120px; gap: 10px; align-items: center; padding: 7px 14px; border-bottom: 1px solid var(--grid); font-size: 13px; }
+.arvore__linha--cab { font-size: 11px; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; color: var(--text-muted); position: sticky; top: 0; background: var(--surface-1); z-index: 1; }
+.arvore__nome { display: flex; align-items: center; gap: 6px; min-width: 0; }
+.arvore__nome .txt { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.arvore__cod { font-size: 11px; color: var(--text-muted); font-variant-numeric: tabular-nums; flex: none; }
+.arvore__tog { width: 18px; height: 18px; border: 0; background: transparent; cursor: pointer; color: var(--text-muted); flex: none; border-radius: 4px; padding: 0; }
+.arvore__tog:hover { background: rgba(11, 11, 11, .07); }
+.arvore__tog--vazio { visibility: hidden; }
+.arvore__linha--n1 { font-weight: 650; background: rgba(11, 11, 11, .025); }
+.arvore__scroll { max-height: 560px; overflow: auto; }
+
+/* ------------------------------------------------------------------ pendencias */
+.pend { border: 1px dashed var(--border-forte); border-radius: var(--raio); padding: 20px; background: #f6f6f4; }
+.pend__tag { display: inline-block; margin-bottom: 10px; }
+.pend h3 { font-size: 15px; margin-bottom: 8px; }
+.pend p { margin: 0 0 8px; font-size: 13px; color: var(--text-secondary); line-height: 1.6; max-width: 78ch; }
+.pend ul { margin: 6px 0 0; padding-left: 18px; color: var(--text-secondary); font-size: 13px; line-height: 1.8; }
+.checklist { display: grid; gap: 8px; margin-top: 10px; }
+.checklist__item { display: flex; gap: 10px; align-items: flex-start; font-size: 13px; color: var(--text-secondary); }
+.checklist__ponto { width: 8px; height: 8px; border-radius: 50%; background: var(--axis); margin-top: 6px; flex: none; }
+
+.integ { display: flex; gap: 14px; align-items: flex-start; padding: 16px 18px; }
+.integ__estado { width: 12px; height: 12px; border-radius: 50%; margin-top: 4px; flex: none; background: var(--status-neutro); }
+.integ__estado--ok { background: var(--status-good); }
+.integ__estado--parcial { background: var(--status-warning); }
+.integ__estado--falha { background: var(--status-critical); }
+.integ__corpo { flex: 1; min-width: 0; }
+.integ__nome { font-weight: 650; font-size: 14px; }
+.integ__desc { font-size: 12.5px; color: var(--text-muted); margin-top: 2px; }
+.integ__res { font-size: 12.5px; margin-top: 7px; }
+
+.tabela-ed td { padding: 8px 14px; }
+.tabela-ed select, .tabela-ed input { padding: 5px 8px; font-size: 12.5px; }
+.tabela-ed input[type="number"] { width: 86px; }
+
+.dica { font-size: 12px; color: var(--text-muted); line-height: 1.55; }
+.cartao-vazio { padding: 40px 18px; text-align: center; color: var(--text-muted); }
+
+@media (max-width: 960px) {
+  .topbar { flex-wrap: wrap; }
+  .topbar__obra { order: 5; width: 100%; }
+  .progresso-global { top: 0; position: static; padding: 0 16px; }
+  .arvore__linha { grid-template-columns: minmax(180px, 1fr) 100px 70px 70px 90px; font-size: 12px; }
+}
+
+@media (max-width: 560px) {
+  .grid--kpi { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+  .kpi { padding: 12px 12px; }
+  .kpi__valor { font-size: 23px; }
+  .kpi__nota { font-size: 11px; }
+  .empresa-card__nome { font-size: 20px; }
+}

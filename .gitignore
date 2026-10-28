@@ -1,0 +1,18 @@
+# Backend
+backend/.venv/
+backend/.env
+**/__pycache__/
+backend/data/*.db
+backend/data/*.db-journal
+
+# Planilhas (dados sensiveis, nao versionar)
+planilhas/
+
+# Artefatos de descoberta no Mega (tem valor financeiro real e nome de empresas; regeneravel
+# rodando backend/scripts/descobrir_mega.py de novo)
+backend/scripts/descoberta_mega.json
+backend/scripts/mapa_obra_mega.json
+
+# OS
+.DS_Store
+Thumbs.db
