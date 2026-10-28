@@ -4,6 +4,7 @@ backend/.env
 **/__pycache__/
 backend/data/*.db
 backend/data/*.db-journal
+backend/data/logs/
 
 # Planilhas (dados sensiveis, nao versionar)
 planilhas/

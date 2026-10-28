@@ -9,3 +9,6 @@ openpyxl>=3.1
 pandas>=2.2
 python-multipart>=0.0.12
 python-dotenv>=1.0
+
+# Para rodar como Servico do Windows em producao (ver deploy/) - so existe no Windows
+pywin32>=306; sys_platform == "win32"

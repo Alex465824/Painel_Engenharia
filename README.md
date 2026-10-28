@@ -17,6 +17,8 @@ instala as dependências, cria `backend\.env` a partir do exemplo e busca as obr
 
 Credenciais ficam em `backend\.env` (nunca vai para o controle de versão): `PREVISION_API_KEY`, `MEGA_DB_*`.
 
+Para subir num servidor Windows como Serviço (inicia sozinho, reinicia se cair), ver [`deploy/DEPLOY.md`](deploy/DEPLOY.md).
+
 ## O que tem
 
 Ao abrir, escolhe-se a empresa (**Gadens** ou **Make IT**); os menus liberados mudam conforme a empresa.
