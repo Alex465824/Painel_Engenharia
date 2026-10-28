@@ -19,8 +19,15 @@ Credenciais ficam em `backend\.env` (nunca vai para o controle de versão): `PRE
 
 Para subir num servidor Windows como Serviço (inicia sozinho, reinicia se cair), ver [`deploy/DEPLOY.md`](deploy/DEPLOY.md).
 
-Se a hospedagem só souber iniciar com `npm start` (ex.: espera um `package.json`), também funciona: o
-`package.json` na raiz só chama o `iniciar.ps1` por baixo — o sistema continua sendo Python, o Node é só a
+Se a hospedagem só souber iniciar com `npm install` / `npm start` (ex.: espera um `package.json`), também
+funciona:
+
+```bash
+npm install   # prepara o ambiente (venv, dependências, backend\.env) e sai, sem subir o servidor
+npm start     # sobe o servidor
+```
+
+O `package.json` na raiz só chama o `iniciar.ps1` por baixo — o sistema continua sendo Python, o Node é só a
 porta de entrada. Nesse caso, se a hospedagem define a porta pela variável `PORT`, ela é respeitada.
 
 ## O que tem

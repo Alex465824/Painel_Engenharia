@@ -1,4 +1,8 @@
 # Sobe o Painel de Engenharia. Cria o ambiente e instala as dependencias na primeira execucao.
+# Com -ApenasPreparar, só cria o ambiente (venv, dependencias, .env) e sai sem iniciar o servidor -
+# e o que "npm install" chama por baixo (ver package.json), para separar instalar de iniciar.
+param([switch]$ApenasPreparar)
+
 $ErrorActionPreference = "Stop"
 Set-Location -Path $PSScriptRoot
 
@@ -23,6 +27,13 @@ if (-not (Test-Path $marcador)) {
 if (-not (Test-Path "backend\.env")) {
     Copy-Item "backend\.env.example" "backend\.env"
     Write-Host "Criei backend\.env a partir do exemplo. Preencha as credenciais do Prevision e do Mega antes de usar." -ForegroundColor Yellow
+}
+
+if ($ApenasPreparar) {
+    Write-Host ""
+    Write-Host "  Ambiente preparado. Rode npm start (ou .\iniciar.ps1) para subir o servidor." -ForegroundColor Green
+    Write-Host ""
+    exit 0
 }
 
 Write-Host ""

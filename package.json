@@ -4,6 +4,7 @@
   "private": true,
   "description": "Painel de Engenharia do Grupo Gadens. O sistema de verdade e Python (FastAPI) - este package.json so existe para permitir iniciar com `npm start` em hospedagens que esperam esse comando. Ver README.md.",
   "scripts": {
+    "install": "powershell -NoProfile -ExecutionPolicy Bypass -File iniciar.ps1 -ApenasPreparar",
     "start": "powershell -NoProfile -ExecutionPolicy Bypass -File iniciar.ps1"
   }
 }
