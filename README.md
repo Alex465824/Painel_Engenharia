@@ -19,6 +19,10 @@ Credenciais ficam em `backend\.env` (nunca vai para o controle de versão): `PRE
 
 Para subir num servidor Windows como Serviço (inicia sozinho, reinicia se cair), ver [`deploy/DEPLOY.md`](deploy/DEPLOY.md).
 
+Se a hospedagem só souber iniciar com `npm start` (ex.: espera um `package.json`), também funciona: o
+`package.json` na raiz só chama o `iniciar.ps1` por baixo — o sistema continua sendo Python, o Node é só a
+porta de entrada. Nesse caso, se a hospedagem define a porta pela variável `PORT`, ela é respeitada.
+
 ## O que tem
 
 Ao abrir, escolhe-se a empresa (**Gadens** ou **Make IT**); os menus liberados mudam conforme a empresa.

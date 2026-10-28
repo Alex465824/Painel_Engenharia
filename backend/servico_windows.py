@@ -71,7 +71,7 @@ class PainelEngenhariaService(win32serviceutil.ServiceFramework):
 
         from app.main import app  # noqa: E402  (import depois do sys.path/chdir de proposito)
 
-        porta = int(os.environ.get("PORTA", "8090"))
+        porta = int(os.environ.get("PORT") or os.environ.get("PORTA") or "8090")
         config = uvicorn.Config(app, host="0.0.0.0", port=porta, log_level="info")
         self.server = uvicorn.Server(config)
         self.server.run()

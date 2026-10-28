@@ -4,7 +4,8 @@ Set-Location -Path $PSScriptRoot
 
 $venv = Join-Path $PSScriptRoot "backend\.venv"
 $python = Join-Path $venv "Scripts\python.exe"
-$porta = if ($env:PORTA) { $env:PORTA } else { "8090" }
+# PORT e a convencao usada por hospedagens Node (ex.: ao rodar via npm start); PORTA e a nossa, de antes.
+$porta = if ($env:PORT) { $env:PORT } elseif ($env:PORTA) { $env:PORTA } else { "8090" }
 
 if (-not (Test-Path $python)) {
     Write-Host "Criando o ambiente virtual..." -ForegroundColor Cyan
